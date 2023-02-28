@@ -1,0 +1,26 @@
+.modal_wrapper {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+
+}
+
+.modal_wrapper img {
+    height: 90%;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+}
