@@ -13,7 +13,7 @@ function App() {
 
   const searchMovies = async (title) => {
 
-    const response = await fetch(`http://localhost:3000?title=${title}`);
+    const response = await fetch(`https://cinefile.onrender.com?title=${title}`);
     const data = await response.json();
 
     const moviesList = data?.Search;
@@ -73,10 +73,11 @@ function App() {
               ))}
             </div>
           )
-          : (<div className='empty'>
-            <h2>Nenhum filme encontrado...</h2>
-            <h3>Tente uma combinação diferente de palavras.</h3>
-          </div>
+          : (
+            <div className='empty'>
+              <h2>Nenhum filme encontrado...</h2>
+              <h3>Tente uma combinação diferente de palavras.</h3>
+            </div>
           )
         }
       </div>
