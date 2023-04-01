@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { GoSearch } from 'react-icons/go';
+import { VscQuestion } from 'react-icons/vsc';
 import { MovieCard } from './MovieCard';
 import { MutatingDots } from 'react-loader-spinner';
+import defaultSearch from './assets/defaultSearch.json';
 import './App.css';
 
 
 function App() {
 
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(defaultSearch.Search);
   const [searchTerm, setSearchTerm] = useState('');
   const [loadingIcon, setLoadingIcon] = useState(false);
 
@@ -21,11 +23,7 @@ function App() {
       moviesList.length = 9;
     }
     setMovies(moviesList);
-  };
-
-  useEffect(() => {
-    searchMovies('Spider man');
-  }, []);
+  }
 
   const enterKey = (e) => {
     e.preventDefault();
@@ -50,6 +48,7 @@ function App() {
         <h2>10.000+ <span>Posters</span> para Baixar!</h2>
 
         <div className='search'>
+        <VscQuestion className='question'/>
           <form onSubmit={enterKey}>
             <input
               type='text'
