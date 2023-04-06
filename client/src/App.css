@@ -11,7 +11,7 @@ body {
         radial-gradient(ellipse at bottom, rgba(31, 31, 31, 0.7), transparent);
     background-repeat: no-repeat;
     color: white;
-
+    overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
@@ -54,6 +54,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     width: fit-content;
     font-family: 'MuseoModerno', cursive;
+    cursor: pointer;
 }
 
 h2 {
