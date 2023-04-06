@@ -12,11 +12,12 @@ function App() {
   const [movies, setMovies] = useState(defaultSearch.Search);
   const [searchTerm, setSearchTerm] = useState("");
   const [loadingIcon, setLoadingIcon] = useState(false);
-  const [visibility, setVisibility] = useState("visible")
+  const [visibility, setVisibility] = useState("flex")
   const [tipActive, setTipActive] = useState("");
 
   const searchMovies = async (title) => {
-    // setLoadingIcon(true)
+    setVisibility("none")
+    setLoadingIcon(true)
     
     const response = await fetch(`https://cinefile.onrender.com?title=${title}`);
     const data = await response.json();
@@ -26,6 +27,8 @@ function App() {
       moviesList.length = 9;
     }
     setLoadingIcon(false)
+    setVisibility("flex")
+
     setMovies(moviesList);
   }
   
@@ -51,7 +54,7 @@ function App() {
           radius='12.5'
           ariaLabel="mutating-dots-loading"
           wrapperStyle={{}}
-          wrapperClass=""
+          wrapperClass="loading"
           visible={loadingIcon}
         />
         <h1>CineFile</h1>
@@ -78,7 +81,7 @@ function App() {
 
         {movies?.length > 0
           ? (
-            <div className='container' style={{visibility: "visible"}}>
+            <div className='container' style={{display: `${visibility}`}}>
               {movies.map((movie) => (
                 <MovieCard movies={movie} key={movie.imdbID} />
               ))}

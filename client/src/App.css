@@ -150,3 +150,10 @@ h2 span {
 .tip_active {
     transform: scale(1, 1);
 }
+
+.loading {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin-top: 50vh;
+}
