@@ -10,26 +10,36 @@ import './App.css';
 function App() {
 
   const [movies, setMovies] = useState(defaultSearch.Search);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [loadingIcon, setLoadingIcon] = useState(false);
+  const [visibility, setVisibility] = useState("visible")
+  const [tipActive, setTipActive] = useState("");
 
   const searchMovies = async (title) => {
-
+    // setLoadingIcon(true)
+    
     const response = await fetch(`https://cinefile.onrender.com?title=${title}`);
     const data = await response.json();
-
+    
     const moviesList = data?.Search;
     if (moviesList?.length > 9) {
       moviesList.length = 9;
     }
+    setLoadingIcon(false)
     setMovies(moviesList);
   }
-
+  
   const enterKey = (e) => {
     e.preventDefault();
-    searchMovies(searchTerm)
+    searchMovies(searchTerm);
   }
 
+  const handleTip = () => {
+    setTipActive("tip_active");
+    setTimeout(() => { setTipActive("")}, 2000)
+  }
+
+  
   return (
     <>
       <div className='app'>
@@ -48,11 +58,13 @@ function App() {
         <h2>10.000+ <span>Posters</span> para Baixar!</h2>
 
         <div className='search'>
-        <VscQuestion className='question'/>
+          <VscQuestion className='question_icon' onClick={handleTip} />
+          <div className={`tip ${tipActive}`}>Pesquise pelo título original!</div>
           <form onSubmit={enterKey}>
             <input
               type='text'
               placeholder='Pesquisar'
+              spellCheck="false"
               value={searchTerm}
               onChange={(e) => { setSearchTerm(e.target.value) }}
             />
@@ -66,7 +78,7 @@ function App() {
 
         {movies?.length > 0
           ? (
-            <div className='container'>
+            <div className='container' style={{visibility: "visible"}}>
               {movies.map((movie) => (
                 <MovieCard movies={movie} key={movie.imdbID} />
               ))}

@@ -68,6 +68,7 @@ h2 span {
 }
 
 .search {
+    position: relative;
     width: 200px;
     height: 2rem;
     display: flex;
@@ -98,10 +99,10 @@ h2 span {
 .container {
     width: auto;
     max-width: 1000px;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    display: flex;
     column-gap: 2rem;
     row-gap: 3rem;
 }
@@ -117,4 +118,35 @@ h2 span {
     color: #ccc;
     margin-top: .3rem;
     margin-bottom: 80vh;
+}
+
+.question_icon {
+    position: absolute;
+    left: 0;
+    transform: translateX(-120%);
+    color: #999;
+    cursor: pointer;
+}
+
+.question_icon:hover .help{
+    /* transform: scale(1, 1); */
+    background-color: red;
+    color: red;
+
+}
+
+.tip {
+    position: absolute;
+    padding: 9px 19px;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8rem;
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    color: #f5f5f5;
+    transition: transform ease-in 150ms;
+    transform: scale(0, 1);
+}
+
+.tip_active {
+    transform: scale(1, 1);
 }

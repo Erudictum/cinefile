@@ -9,8 +9,8 @@ export function ModalImage({ url, show, setShow }) {
 				className='modal_wrapper'
 				style={show ? { display: 'flex' } : { display: 'none' }}
 			>
-				<img className='show_image' src={url} />
-				<RiCloseLine className='close-btn'/>
+				<img src={url} />
+				<RiCloseLine className='close_btn'/>
 
 			</div>
 		</>
