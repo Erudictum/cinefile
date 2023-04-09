@@ -27,6 +27,7 @@ function App() {
     if (moviesList?.length > 9) {
       moviesList.length = 9;
     }
+
     setLoadingIcon(false);
     setVisibility("flex");
 
