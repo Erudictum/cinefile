@@ -16,8 +16,9 @@ function App() {
   const [tipActive, setTipActive] = useState("");
 
   const searchMovies = async (title) => {
-    setVisibility("none")
-    setLoadingIcon(true)
+    document.activeElement.blur();
+    setVisibility("none");
+    setLoadingIcon(true);
 
     const response = await fetch(`https://cinefile.onrender.com?title=${title}`);
     const data = await response.json();
@@ -26,8 +27,8 @@ function App() {
     if (moviesList?.length > 9) {
       moviesList.length = 9;
     }
-    setLoadingIcon(false)
-    setVisibility("flex")
+    setLoadingIcon(false);
+    setVisibility("flex");
 
     setMovies(moviesList);
   }

@@ -11,6 +11,7 @@ export function MovieCard({ movies }) {
 	const [showModal, setShowModal] = useState(false);
 
 	const url = movies.Poster.replace('300.jpg', '800.jpg');
+	const thumb = movies.Poster.replace('300.jpg', '600.jpg');
 
 	const handleModalView = () => {
 		return setShowModal(true);
@@ -30,7 +31,7 @@ export function MovieCard({ movies }) {
 					<img
 						src={
 							movies.Poster !== 'N/A'
-								? movies.Poster
+								? thumb
 								: 'https://via.placeholder.com/700/333?text=Imagem+não+encontrada'
 						}
 						alt={movies.Title}
