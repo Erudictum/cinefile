@@ -8,6 +8,8 @@
 
 >Site no ar: &nbsp; https://cinefile.vercel.app
 
+Obs.: Apenas a primeira busca poderá levar cerca de 15 segundos. É um limite da hospedagem gratuita, que impôe esse atraso para tirar o servidor do _standby_.
+
 <br><br>
 
 ## Como rodar localmente:
@@ -29,7 +31,7 @@
     npm run dev
 ```
 
-6. Na pasta client/src, no arquivo App.jsx, substitua a linha 22, por:
+6. Na pasta client/src, no arquivo App.jsx, substitua a linha 22 por:
 ```javascript
     const response = await fetch(`http://localhost:3000?title=${title}`);
 ```
@@ -49,7 +51,7 @@
 ```
     ➜  Local:   http://localhost:5173/
 ```
-10. Dê (_control_ + clique) no link, ou digite no navegador o link que estiver no seu terminal.
+10. Dê (_control_ + clique) no link, ou digite no navegador o endereço que estiver no seu terminal.
 ```
     http://localhost:5173/
 ```
