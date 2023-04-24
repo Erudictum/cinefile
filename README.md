@@ -8,11 +8,13 @@
 
 >Site no ar: &nbsp; https://cinefile.vercel.app
 
-Obs.: Apenas a primeira busca poderá levar cerca de 15 segundos. É um limite da hospedagem gratuita, que impôe esse atraso para tirar o servidor do _standby_.
+Obs.: Apenas a primeira busca poderá levar cerca de 15 segundos. É um limite da hospedagem gratuita, que impõe esse atraso para tirar o servidor do _standby_.
 
 <br><br>
 
 ## Como rodar localmente:
+<br>
+
 1. Faça uma conta gratuita no site: &nbsp; https://www.omdbapi.com/apikey.aspx
 2. Você receberá um email do OMDb API.
 3. Clique no link para ativar sua _key_, e copie sua _key_ que virá no mesmo email.
