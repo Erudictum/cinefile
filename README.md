@@ -8,7 +8,7 @@
 
 >Site no ar: &nbsp; https://cinefile.vercel.app
 
-Obs.: Apenas a primeira busca poderá levar cerca de 30 segundos. É um limite da hospedagem gratuita, que impõe esse atraso para tirar o servidor do _standby_.
+Obs.: Apenas a **primeira busca** poderá levar cerca de 45 segundos para responder. É um limite da hospedagem gratuita, que impõe esse atraso para tirar o servidor do _standby_.
 
 <br><br>
 
